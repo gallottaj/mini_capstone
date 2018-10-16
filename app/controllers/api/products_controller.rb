@@ -33,4 +33,11 @@ class Api::ProductsController < ApplicationController
     @product.description = "reusable water bottle"
     @product.save
   end
+
+  def destroy
+    product_id = params [:id]
+    @product Product.find_by(id: product_id)
+    @product.destroy
+    render "destroy.json.jbuilder"
+  end
 end
