@@ -3,7 +3,7 @@ class Api::ProductsController < ApplicationController
   def index
     # show all products
     @products = Product.all
-    render "product1.json.jbuilder"
+    render "index.json.jbuilder"
   end
 
  def show
@@ -17,7 +17,7 @@ class Api::ProductsController < ApplicationController
     #make a new product
     @product = Product.new(name: "remote control", price: 10, image_url: " ", description: "universal remote")
     @product.save
-    render "show.json.jbuilder"
+    render "create.json.jbuilder"
   end
 
   def update
@@ -30,6 +30,7 @@ class Api::ProductsController < ApplicationController
     @product.name = "water bottle"
     @product.price = 15
     @product.image_url = " "
-    @description = "reusable water bottle"
+    @product.description = "reusable water bottle"
+    @product.save
   end
 end
