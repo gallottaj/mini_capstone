@@ -11,3 +11,4 @@
   Product.create({name: "television", price: 500, image_url: " ", description: "50 in. TV"})  
   Product.create({name: "cell phone", price: 800, image_url: " ", description: "touch screen phone"})  
 
+  
