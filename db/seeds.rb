@@ -8,5 +8,6 @@
 
 #name, price, image url, description
 
-    product1 = Product.create(name: "television", price: 500, image_url: " ", description: "50 in. TV")  
-    product2 = Product.create(name: "cell phone", price: 800, image_url: " ", description: "touch screen phone")  
+  Product.create({name: "television", price: 500, image_url: " ", description: "50 in. TV"})  
+  Product.create({name: "cell phone", price: 800, image_url: " ", description: "touch screen phone"})  
+
