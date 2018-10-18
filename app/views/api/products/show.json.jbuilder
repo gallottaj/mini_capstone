@@ -1,3 +1,3 @@
 
-json.is_discounted? @recipe.is_discounted?
+json.is_discounted? @product.is_discounted?
 
