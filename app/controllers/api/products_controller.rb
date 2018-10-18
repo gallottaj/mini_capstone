@@ -2,11 +2,10 @@ class Api::ProductsController < ApplicationController
 
   def index
     # show all products
-    @products = Product.all
     render "index.json.jbuilder"
   end
 
- def show
+  def show
     # show one specific product
     product_id = params[:id]
     @products = Product.find_by(id: product_id)
@@ -34,10 +33,10 @@ class Api::ProductsController < ApplicationController
     @product.save
   end
 
-  def destroy
-    product_id = params [:id]
-    @product Product.find_by(id: product_id)
-    @product.destroy
-    render "destroy.json.jbuilder"
-  end
+  # def destroy
+  #   product_id = params [:id]
+  #   @product Product.find_by(id: product_id)
+  #   @product.destroy
+  #   render "destroy.json.jbuilder"
+  # end
 end
