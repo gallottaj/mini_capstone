@@ -9,4 +9,14 @@ class Product < ApplicationRecord
       return false
     end
   end
+
+  def tax
+    tax_rate = 0.09
+    price * tax_rate
+  end
+
+  def total
+    tax_rate = 0.09
+    price + tax
+  end
 end
