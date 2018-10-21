@@ -1,5 +1,15 @@
 class Product < ApplicationRecord
+# price
+#  presence
+#  less than whatever you picked for your decimal
+  validates :price, numericality: true
+  validates :name, numericality: true
+  validates :price, numericality: {greater_than: 0}
+
   
+
+
+
   def is_discounted?
     # returns true if an item is under $10, otherwise returns false
     @price = price
@@ -20,3 +30,20 @@ class Product < ApplicationRecord
     price + tax
   end
 end
+
+
+
+# What should validations should product have?
+
+# name
+#  presence
+#  uniqueness
+
+
+# price
+#  presence
+#  numericality
+#  less than whatever you picked for your decimal
+
+# description
+#  at least 10 characters

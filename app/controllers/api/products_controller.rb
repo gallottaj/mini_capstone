@@ -1,7 +1,9 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    # show all products
+    # Change the index action to always return products sorted by id.
+    @products = Product.all
+    @products.order!(:id => :desc)
     render "index.json.jbuilder"
   end
 
@@ -13,13 +15,18 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
-    #make a new product
-    @product = Product.new(name: "remote control", price: 10, image_url: " ", description: "universal remote")
-    @product.save
-    render "create.json.jbuilder"
+    if price > 0  #happy path
+      @product = Product.new(name: "remote control", price: 10, image_url: " ", description: "universal remote")
+      @product.save
+      render "create.json.jbuilder"
+    else
+      errors.json.jbuilder #sad path
+    end
   end
 
-  def update
+  def update           
+
+   #render errors.json.jbuilder to show user
     # combines 2 actions
     # get the correct product ==> show
     # change the product ==> kind of like create
@@ -40,3 +47,16 @@ class Api::ProductsController < ApplicationController
   #   render "destroy.json.jbuilder"
   # end
 end
+
+
+#what validations should a product have?
+
+# name:
+# => presence - a name has to exit
+# => uniqueness - no duplicates
+
+#price
+# => presence - it cant be free
+# => numericality - less than whatever picked for decimal
+
+#   # => at least 10 characters
