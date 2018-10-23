@@ -2,13 +2,13 @@ class Product < ApplicationRecord
 # price
 #  presence
 #  less than whatever you picked for your decimal
-  validates :price, numericality: true
-  validates :name, numericality: true
-  validates :price, numericality: {greater_than: 0}
+  # validates :price, numericality: true
+  # validates :name, numericality: true
+  # validates :price, numericality: {greater_than: 0}
 
-  
-
-
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end  
 
   def is_discounted?
     # returns true if an item is under $10, otherwise returns false
