@@ -20,9 +20,3 @@ products.each do |product|
 end
 
 
-# products = Product.all
-
-# products.each do |product|
-#   product.supplier_id = rand(1..2)# random number between 1 and 2
-#   product.save
-# # end
