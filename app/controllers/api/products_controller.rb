@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    # Change the index action to always return products sorted by id.
+    # Change the index action to allow for searching by name.
     @products = Product.all
     @products.order!(:id => :desc)
     render "index.json.jbuilder"
