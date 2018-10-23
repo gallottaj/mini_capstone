@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-  belongs_to :supplier
+  belongs_to :supplier # has to be singular
+  has_many :images 
 # price
 #  presence
 #  less than whatever you picked for your decimal
@@ -7,8 +8,10 @@ class Product < ApplicationRecord
   # validates :name, numericality: true
   # validates :price, numericality: {greater_than: 0}
 
-  # def supplier
-  #   Supplier.find_by(id: supplier_id)
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+
 
   # end  
 
