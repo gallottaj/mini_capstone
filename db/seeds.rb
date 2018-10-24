@@ -27,7 +27,8 @@ image.save
 # 10.times do
 #   image = Image.create(url: Faker::Internet.url, product_id: rand(1..10))
 #   image.save
-# end
+# endirb(main):009:0> image = Image.first
+
 
 
 
