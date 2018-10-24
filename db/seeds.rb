@@ -22,6 +22,14 @@ end
 image = Image.new({url: "this url", product_id: 1})
 image.save
 
+# require 'faker'
+
+# 10.times do
+#   image = Image.create(url: Faker::Internet.url, product_id: rand(1..10))
+#   image.save
+# end
+
+
 
 
 

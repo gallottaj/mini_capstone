@@ -8,16 +8,6 @@ class Product < ApplicationRecord
   # validates :name, numericality: true
   # validates :price, numericality: {greater_than: 0}
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
-  end
-
-  def image
-    Product.find_by(id: image_id)
-
-
-  # end  
-
   def is_discounted?
     # returns true if an item is under $10, otherwise returns false
     @price = price
@@ -41,17 +31,4 @@ end
 
 
 
-# What should validations should product have?
 
-# name
-#  presence
-#  uniqueness
-
-
-# price
-#  presence
-#  numericality
-#  less than whatever you picked for your decimal
-
-# description
-#  at least 10 characters
