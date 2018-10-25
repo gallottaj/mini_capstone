@@ -1,6 +1,9 @@
 class Api::ProductsController < ApplicationController
+    before_action :authenticate_user
 
   def index
+    p 'current_user'
+    p current_user
     # Change the index action to allow for searching by name.
     @products = Product.all
     @products.order!(:id => :desc)
