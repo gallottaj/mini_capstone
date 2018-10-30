@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_admin, only: [:create, :update, :destroy]
 
   def index
     p 'current_user'
@@ -19,7 +19,7 @@ class Api::ProductsController < ApplicationController
 
   def create
     if price > 0  #happy path
-      @product = Product.new(name: "remote control", price: 10, image_url: " ", description: "universal remote")
+      @product = Product.new(name: "remote control", price: 10, description: "universal remote")
       @product.save
       render "create.json.jbuilder"
     else

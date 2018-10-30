@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :supplier # has to be singular
   has_many :images 
   belongs_to :order
+
 # price
 #  presence
 #  less than whatever you picked for your decimal

@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
   belongs_to :product
-end
 
 def tax
     tax_rate = 0.09
