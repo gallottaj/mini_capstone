@@ -13,3 +13,7 @@ Rails.application.routes.draw do
     get '/orders' => 'orders#index'
   end
 end
+
+# end of night 10/30
+# created model CartedProduct and controller api/carted_products
+# need to remove attributes from orders and start associations

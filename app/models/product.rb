@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to :supplier # has to be singular
   has_many :images 
   belongs_to :order
+  has_many :users, through: :carted_products
 
 # price
 #  presence
