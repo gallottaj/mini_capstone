@@ -1,6 +1,5 @@
 class Api::OrdersController < ApplicationController
   before_action :authenticate_with_http_digest
-  # authenticate_with_http_digest
   def index
    # @orders = Order.where(user_id: current_user.id)
     if current_user
@@ -10,13 +9,17 @@ class Api::OrdersController < ApplicationController
       render json: [], status: :unauthorized
     end
   end
-
+  
   def create
-    @user = User.first
-    @user = @user.carted_products
+    @user = CartedProduct.where(status:'carted', user_id: current_user.id)
+   # @user = User.current_user
+   #  # @user = @user.carted_products
     render 'index.json.jbuilder'
   end
 end
+
+# CartedProduct.where("status = 'carted' and user_id =3")
+
 
 # def create
 #     # most basic create action of all time

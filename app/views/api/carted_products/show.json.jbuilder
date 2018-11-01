@@ -1,1 +1,1 @@
-json.message 'hello'
+json.message @user
