@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get '/products' => 'products#index'
-  post '/products/new' => 'products#new'
+  get '/products/new' => 'products#new'
   get 'products/:id' => 'products#show'
+  post '/products' => 'products#create'
 
 
   # STEP 1: A ROUTE triggers a controller action

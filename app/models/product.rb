@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   belongs_to :supplier # has to be singular
   has_many :images 
-  belongs_to :order
+  # belongs_to :order
   has_many :users, through: :carted_products
 
 # price

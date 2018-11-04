@@ -18,13 +18,13 @@ class Api::ProductsController < ApplicationController
   end
 
   def create
-    if price > 0  #happy path
-      @product = Product.new(name: "remote control", price: 10, description: "universal remote")
-      @product.save
-      render "create.json.jbuilder"
-    else
-      errors.json.jbuilder #sad path
-    end
+    @product = product.new(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      )
+    @product.save
+    render "create.json.jbuilder"
   end
 
   def update           
@@ -43,23 +43,4 @@ class Api::ProductsController < ApplicationController
     @product.save
   end
 
-  # def destroy
-  #   product_id = params [:id]
-  #   @product Product.find_by(id: product_id)
-  #   @product.destroy
-  #   render "destroy.json.jbuilder"
-  # end
-end
-
-
-#what validations should a product have?
-
-# name:
-# => presence - a name has to exit
-# => uniqueness - no duplicates
-
-#price
-# => presence - it cant be free
-# => numericality - less than whatever picked for decimal
-
-#   # => at least 10 characters
+  
