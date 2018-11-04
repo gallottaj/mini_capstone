@@ -9,7 +9,7 @@ class Api::OrdersController < ApplicationController
       render json: [], status: :unauthorized
     end
   end
-  
+
   def create
     @user = CartedProduct.where(status:'carted', user_id: current_user.id)
    # @user = User.current_user
@@ -18,40 +18,19 @@ class Api::OrdersController < ApplicationController
   end
 end
 
-# CartedProduct.where("status = 'carted' and user_id =3")
 
+  # started 'change item in cart to an order' create action !
 
 # def create
-#     # most basic create action of all time
-#     # subtotal
-#     # subtotal == quantity * price
-#     product = Product.find_by(id: params[:product_id])
-
-#     price = product.price
-
-#     calculated_subtotal = params[:quantity].to_i * price
-#     calculated_tax = calculated_subtotal * 0.09
-#     calculated_total = calculated_subtotal + calculated_tax
-
-#     @order = Order.new(
-#       product_id: params[:product_id],
-#       user_id: current_user.id,
-#       quantity: params[:quantity],
-#       subtotal: calculated_subtotal,
-#       total: calculated_total,
-#       tax: calculated_tax
+#   @user = CartedProduct.where(status:'carted', user_id: current_user.id)
+#   @order = Order.new(
+#     user_id: current_user.id,
+#     subtotal: ,
+#     tax: ,
+#     total: ,
 #     )
 #     @order.save
-#     # how can i figure out why this isn't saving
-#     p @order.errors.full_messages
-#     render "show.json.jbuilder"
-
-#     # intake params
-#     # Order.new something something
-#     # order.save something something
-#     # render the new thing I jut saved
-#   end
-
- 
+#     p @order.full_messages
+#  end
 
 
