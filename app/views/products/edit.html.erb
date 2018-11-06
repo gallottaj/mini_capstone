@@ -1,0 +1,7 @@
+<h3>edit a product</h3>
+<form action="/products/<%= @product.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <p>enter the new product name<input type="text" value="<%= @product.name %>" name="name"></p>
+  <p>enter the product's price<input type="text" value="<%= @product.price %>" name="price"></p>
+  <input type="submit">
+</form>
